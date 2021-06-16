@@ -1,6 +1,5 @@
 library(Covid19VaccineAesiIncidenceRate)
 
-minCellCount <- 5
 
 # The folder where the study intermediate and result files will be written:
 outputFolder <- "s:/Covid19VaccineAesiDiagnostics"
@@ -41,8 +40,7 @@ Covid19VaccineAesiIncidenceRate::runStudy(connectionDetails = connectionDetails,
                                                       databaseId = databaseId,
                                                       databaseName = databaseName,
                                                       databaseDescription = databaseDescription,
-                                                      incremental = TRUE,
-                                                      minCellCount = minCellCount)
+                                                      incremental = TRUE)
 
 
 

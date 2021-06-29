@@ -377,7 +377,7 @@ insertRefEntries <- function(connection,
 }
 
 zipResults <- function(exportFolder, databaseId) {
-  zipName <- file.path(exportFolder, paste0("Results_", databaseId, ".zip"))
+  zipName <- file.path(exportFolder, paste0("Results_IR_", databaseId, ".zip"))
   files <- list.files(exportFolder, pattern = ".*\\.csv$")
   oldWd <- setwd(exportFolder)
   on.exit(setwd(oldWd), add = TRUE)

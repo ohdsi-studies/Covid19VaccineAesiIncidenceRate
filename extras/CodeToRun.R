@@ -33,14 +33,14 @@ databaseDescription <-
 # Use this to run the study. The results will be stored in a zip file called
 # 'Results_<databaseId>.zip in the outputFolder.
 Covid19VaccineAesiIncidenceRate::runStudy(connectionDetails = connectionDetails,
-                                                      cdmDatabaseSchema = cdmDatabaseSchema,
-                                                      cohortDatabaseSchema = cohortDatabaseSchema,
-                                                      cohortTablePrefix = "ir",
-                                                      exportFolder = outputFolder,
-                                                      databaseId = databaseId,
-                                                      databaseName = databaseName,
-                                                      databaseDescription = databaseDescription,
-                                                      incremental = TRUE)
+                                          cdmDatabaseSchema = cdmDatabaseSchema,
+                                          cohortDatabaseSchema = cohortDatabaseSchema,
+                                          cohortTablePrefix = "ir",
+                                          exportFolder = outputFolder,
+                                          databaseId = databaseId,
+                                          databaseName = databaseName,
+                                          databaseDescription = databaseDescription,
+                                          incremental = TRUE)
 
 
 

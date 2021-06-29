@@ -47,7 +47,8 @@ uploadStudyResults <- function(outputFolder, privateKeyFileName, userName) {
 #'                             (/). Do not use a folder on a network drive since this greatly impacts
 #'                             performance.
 #'
-uploadResults <- function(outputFolder, privateKeyFileName, userName, remoteFolder) {
+#' @export
+uploadResults <- function(outputFolder, privateKeyFileName, userName) {
   fileName <- list.files(outputFolder, "^Results_.*.zip$", full.names = TRUE)
   if (length(fileName) == 0) {
     stop("Could find results file in folder. Did you run (and complete) execute?")
@@ -57,7 +58,7 @@ uploadResults <- function(outputFolder, privateKeyFileName, userName, remoteFold
   }
   OhdsiSharing::sftpUploadFile(privateKeyFileName = privateKeyFileName,
                                userName = userName,
-                               remoteFolder = remoteFolder,
+                               remoteFolder = rootFTPFolder(),
                                fileName = fileName)
   ParallelLogger::logInfo("Finished uploading")
 }

@@ -436,6 +436,16 @@
 			"RemoteRepo" : "Covid19VaccineAesiIncidenceRate",
 			"RemoteUsername" : "ohdsi-studies",
 			"RemoteRef" : "develop"
+		},
+		"OhdsiSharing" : {
+			"Package" : "OhdsiSharing",
+			"Version" : "0.2.2",
+			"Source" : "GitHub",
+			"RemoteType" : "github",
+			"RemoteHost" : "api.github.com",
+			"RemoteRepo" : "OhdsiSharing",
+			"RemoteUsername" : "ohdsi",
+			"RemoteRef" : "v0.2.2"
 		}
 	}
 }

@@ -4,7 +4,7 @@
 \alias{uploadResults}
 \title{Upload results to OHDSI server}
 \usage{
-uploadResults(outputFolder, privateKeyFileName, userName, remoteFolder)
+uploadResults(outputFolder, privateKeyFileName, userName)
 }
 \arguments{
 \item{outputFolder}{Name of local folder to place results; make sure to use forward slashes

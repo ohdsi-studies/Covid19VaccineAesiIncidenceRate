@@ -46,9 +46,10 @@ uploadStudyResults <- function(outputFolder, privateKeyFileName, userName) {
 #' @param outputFolder         Name of local folder to place results; make sure to use forward slashes
 #'                             (/). Do not use a folder on a network drive since this greatly impacts
 #'                             performance.
+#' @param remoteFolder         Name of remote FTP folder to place results
 #'
 #' @export
-uploadResults <- function(outputFolder, privateKeyFileName, userName) {
+uploadResults <- function(outputFolder, privateKeyFileName, userName, remoteFolder) {
   fileName <- list.files(outputFolder, "^Results_.*.zip$", full.names = TRUE)
   if (length(fileName) == 0) {
     stop("Could find results file in folder. Did you run (and complete) execute?")

@@ -96,17 +96,17 @@ runStudy <- function(connectionDetails = NULL,
     ParallelLogger::logInfo("**********************************************************")
     ParallelLogger::logInfo("  ---- Creating target cohorts ---- ")
     ParallelLogger::logInfo("**********************************************************")
-    instantiatedTargetCohortIds <- instantiateCohortSet(connectionDetails = connectionDetails,
-                                                        connection = connection,
-                                                        cdmDatabaseSchema = cdmDatabaseSchema,
-                                                        tempEmulationSchema = tempEmulationSchema,
-                                                        cohortDatabaseSchema = cohortDatabaseSchema,
-                                                        cohortTable = targetCohortTable,
-                                                        cohorts = targetCohorts,
-                                                        cohortSqlFolder = "target",
-                                                        createCohortTable = TRUE,
-                                                        incremental = incremental,
-                                                        incrementalFolder = incrementalFolder)
+    instantiateCohortSet(connectionDetails = connectionDetails,
+                         connection = connection,
+                         cdmDatabaseSchema = cdmDatabaseSchema,
+                         tempEmulationSchema = tempEmulationSchema,
+                         cohortDatabaseSchema = cohortDatabaseSchema,
+                         cohortTable = targetCohortTable,
+                         cohorts = targetCohorts,
+                         cohortSqlFolder = "target",
+                         createCohortTable = TRUE,
+                         incremental = incremental,
+                         incrementalFolder = incrementalFolder)
 
     # Create the ref table
     ParallelLogger::logInfo("Insert target reference")
@@ -121,10 +121,6 @@ runStudy <- function(connectionDetails = NULL,
   }
 
   if (nrow(subgroupCohorts) > 0) {
-    # In the case that the package is running in incremental mode, the vector instantiatedTargetCohortIds
-    # will contain a list of cohorts that were generated in this run. If any of the target cohorts are
-    # re-generated, the subgroups must be regenerated.
-    doIncremental <- ifelse(length(instantiatedTargetCohortIds) == 0, yes = TRUE, no = FALSE)
     ParallelLogger::logInfo("**********************************************************")
     ParallelLogger::logInfo("  ---- Creating subgroup cohorts ---- ")
     ParallelLogger::logInfo("**********************************************************")
@@ -137,7 +133,7 @@ runStudy <- function(connectionDetails = NULL,
                          cohorts = subgroupCohorts,
                          cohortSqlFolder = "subgroup",
                          createCohortTable = TRUE,
-                         incremental = doIncremental,
+                         incremental = incremental,
                          incrementalFolder = incrementalFolder,
                          target_ref_table = subgroupRefTable)  # NOTE: Extra param target_ref_table
   }

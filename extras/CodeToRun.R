@@ -47,5 +47,5 @@ Covid19VaccineAesiIncidenceRate::runStudy(connectionDetails = connectionDetails,
 # Upload the results to the OHDSI SFTP server:
 privateKeyFileName <- ""
 userName <- ""
-Covid19VaccineAesiIncidenceRate::uploadResults(outputFolder, privateKeyFileName, userName)
+Covid19VaccineAesiIncidenceRate::uploadStudyResults(outputFolder, privateKeyFileName, userName)
 

@@ -42,6 +42,7 @@
 createCohortTable <- function(connectionDetails = NULL,
                               connection = NULL,
                               cohortDatabaseSchema,
+                              tempEmulationSchema = NULL,
                               cohortTable = "cohort") {
   start <- Sys.time()
   ParallelLogger::logInfo("Creating cohort table")
@@ -53,6 +54,7 @@ createCohortTable <- function(connectionDetails = NULL,
                                            packageName = getThisPackageName(),
                                            dbms = connection@dbms,
                                            cohort_database_schema = cohortDatabaseSchema,
+                                           tempEmulationSchema = tempEmulationSchema,
                                            cohort_table = cohortTable)
   DatabaseConnector::executeSql(connection, sql, progressBar = FALSE, reportOverallTime = FALSE)
   ParallelLogger::logDebug("- Created table ", cohortDatabaseSchema, ".", cohortTable)

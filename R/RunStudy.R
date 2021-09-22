@@ -115,6 +115,7 @@ runStudy <- function(connectionDetails = NULL,
                        sqlFile = "InsertTargetRef.sql",
                        cohortDatabaseSchema = cohortDatabaseSchema,
                        tableName = targetRefTable,
+                       tempEmulationSchema = tempEmulationSchema,
                        target_cohort_definition_id = targetCohorts$cohortId[i],
                        target_name = targetCohorts$cohortName[i])
     }

@@ -506,7 +506,9 @@ if (!all(utf8::utf8_valid(packageFiles))) {
 }
 
 # Create the Renv lock file
-OhdsiRTools::createRenvLockFile("Covid19VaccineAesiIncidenceRate")
+OhdsiRTools::createRenvLockFile("Covid19VaccineAesiIncidenceRate",
+                                additionalRequiredPackages = c('keyring', "DatabaseConnector","dplyr","ROhdsiWebApi",
+                                                               "stringr","SqlRender","tidyr", "plyr"))
 
 # Validate cohort SQL file names ------------
 targetCohorts <- Covid19VaccineAesiIncidenceRate::readCsv("settings/targetRef.csv")

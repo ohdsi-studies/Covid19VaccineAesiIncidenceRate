@@ -15,7 +15,9 @@ cohortDefinitionsArray <- list()
 for (i in (1:nrow(studyCohorts))) {
   print(i)
   name <- studyCohorts$name[[i]]
-  outcomeRef <- readr::read_csv(file = "Covid19VaccineAesiIncidenceCharacterization\\inst\\settings\\OutcomeRef.csv", col_types = readr::cols())
+  outcomeRef <- readr::read_csv(file = "Covid19VaccineAesiIncidenceCharacterization\\inst\\settings\\OutcomeRef.csv", 
+                                col_types = readr::cols(), 
+                                lazy = FALSE)
   
   outcomeRef2[[i]] <- outcomeRef[1,] %>% 
     dplyr::mutate(outcomeId = studyCohorts$id[[i]],

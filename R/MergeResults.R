@@ -20,7 +20,8 @@ preMergeResultsFiles <- function(dataFolder) {
     data <- readr::read_csv(file.path(folder, file),
                             col_types = readr::cols(),
                             guess_max = 1e+07,
-                            locale = readr::locale(encoding = "UTF-8"))
+                            locale = readr::locale(encoding = "UTF-8"), 
+                            lazy = FALSE)
     colnames(data) <- SqlRender::snakeCaseToCamelCase(colnames(data))
 
     if (!overwrite && exists(camelCaseName, envir = .GlobalEnv)) {

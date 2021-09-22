@@ -1,6 +1,6 @@
 {
 	"R" : {
-		"Version" : "4.0.5",
+		"Version" : "4.1.1",
 		"Repositories" : [
 			{
 				"Name" : "CRAN",
@@ -29,7 +29,7 @@
 		},
 		"cli" : {
 			"Package" : "cli",
-			"Version" : "2.5.0",
+			"Version" : "3.0.1",
 			"Source" : "Repository",
 			"Repository" : "CRAN"
 		},
@@ -41,7 +41,7 @@
 		},
 		"fansi" : {
 			"Package" : "fansi",
-			"Version" : "0.4.2",
+			"Version" : "0.5.0",
 			"Source" : "Repository",
 			"Repository" : "CRAN"
 		},
@@ -57,15 +57,15 @@
 			"Source" : "Repository",
 			"Repository" : "CRAN"
 		},
-		"Rcpp" : {
-			"Package" : "Rcpp",
-			"Version" : "1.0.6",
+		"pkgconfig" : {
+			"Package" : "pkgconfig",
+			"Version" : "2.0.3",
 			"Source" : "Repository",
 			"Repository" : "CRAN"
 		},
 		"utf8" : {
 			"Package" : "utf8",
-			"Version" : "1.2.1",
+			"Version" : "1.2.2",
 			"Source" : "Repository",
 			"Repository" : "CRAN"
 		},
@@ -81,21 +81,57 @@
 			"Source" : "Repository",
 			"Repository" : "CRAN"
 		},
-		"pillar" : {
-			"Package" : "pillar",
-			"Version" : "1.6.1",
+		"cpp11" : {
+			"Package" : "cpp11",
+			"Version" : "0.3.1",
 			"Source" : "Repository",
 			"Repository" : "CRAN"
 		},
-		"pkgconfig" : {
-			"Package" : "pkgconfig",
-			"Version" : "2.0.3",
+		"hms" : {
+			"Package" : "hms",
+			"Version" : "1.1.0",
+			"Source" : "Repository",
+			"Repository" : "CRAN"
+		},
+		"pillar" : {
+			"Package" : "pillar",
+			"Version" : "1.6.2",
+			"Source" : "Repository",
+			"Repository" : "CRAN"
+		},
+		"prettyunits" : {
+			"Package" : "prettyunits",
+			"Version" : "1.1.1",
 			"Source" : "Repository",
 			"Repository" : "CRAN"
 		},
 		"purrr" : {
 			"Package" : "purrr",
 			"Version" : "0.3.4",
+			"Source" : "Repository",
+			"Repository" : "CRAN"
+		},
+		"R6" : {
+			"Package" : "R6",
+			"Version" : "2.5.1",
+			"Source" : "Repository",
+			"Repository" : "CRAN"
+		},
+		"Rcpp" : {
+			"Package" : "Rcpp",
+			"Version" : "1.0.7",
+			"Source" : "Repository",
+			"Repository" : "CRAN"
+		},
+		"bit64" : {
+			"Package" : "bit64",
+			"Version" : "4.0.5",
+			"Source" : "Repository",
+			"Repository" : "CRAN"
+		},
+		"progress" : {
+			"Package" : "progress",
+			"Version" : "1.2.2",
 			"Source" : "Repository",
 			"Repository" : "CRAN"
 		},
@@ -107,7 +143,19 @@
 		},
 		"stringi" : {
 			"Package" : "stringi",
-			"Version" : "1.5.3",
+			"Version" : "1.7.4",
+			"Source" : "Repository",
+			"Repository" : "CRAN"
+		},
+		"tibble" : {
+			"Package" : "tibble",
+			"Version" : "3.1.4",
+			"Source" : "Repository",
+			"Repository" : "CRAN"
+		},
+		"tidyselect" : {
+			"Package" : "tidyselect",
+			"Version" : "1.1.1",
 			"Source" : "Repository",
 			"Repository" : "CRAN"
 		},
@@ -117,27 +165,21 @@
 			"Source" : "Repository",
 			"Repository" : "CRAN"
 		},
-		"BH" : {
-			"Package" : "BH",
-			"Version" : "1.75.0-0",
+		"tzdb" : {
+			"Package" : "tzdb",
+			"Version" : "0.1.2",
 			"Source" : "Repository",
 			"Repository" : "CRAN"
 		},
-		"bit64" : {
-			"Package" : "bit64",
-			"Version" : "4.0.5",
+		"withr" : {
+			"Package" : "withr",
+			"Version" : "2.4.2",
 			"Source" : "Repository",
 			"Repository" : "CRAN"
 		},
 		"clipr" : {
 			"Package" : "clipr",
 			"Version" : "0.7.1",
-			"Source" : "Repository",
-			"Repository" : "CRAN"
-		},
-		"cpp11" : {
-			"Package" : "cpp11",
-			"Version" : "0.2.7",
 			"Source" : "Repository",
 			"Repository" : "CRAN"
 		},
@@ -153,12 +195,6 @@
 			"Source" : "Repository",
 			"Repository" : "CRAN"
 		},
-		"hms" : {
-			"Package" : "hms",
-			"Version" : "1.1.0",
-			"Source" : "Repository",
-			"Repository" : "CRAN"
-		},
 		"jsonlite" : {
 			"Package" : "jsonlite",
 			"Version" : "1.7.2",
@@ -167,13 +203,7 @@
 		},
 		"mime" : {
 			"Package" : "mime",
-			"Version" : "0.10",
-			"Source" : "Repository",
-			"Repository" : "CRAN"
-		},
-		"R6" : {
-			"Package" : "R6",
-			"Version" : "2.5.0",
+			"Version" : "0.11",
 			"Source" : "Repository",
 			"Repository" : "CRAN"
 		},
@@ -185,7 +215,7 @@
 		},
 		"SqlRender" : {
 			"Package" : "SqlRender",
-			"Version" : "1.7.0",
+			"Version" : "1.8.1",
 			"Source" : "Repository",
 			"Repository" : "CRAN"
 		},
@@ -195,27 +225,21 @@
 			"Source" : "Repository",
 			"Repository" : "CRAN"
 		},
-		"tibble" : {
-			"Package" : "tibble",
-			"Version" : "3.1.1",
-			"Source" : "Repository",
-			"Repository" : "CRAN"
-		},
-		"tidyselect" : {
-			"Package" : "tidyselect",
-			"Version" : "1.1.1",
-			"Source" : "Repository",
-			"Repository" : "CRAN"
-		},
 		"urltools" : {
 			"Package" : "urltools",
 			"Version" : "1.7.3",
 			"Source" : "Repository",
 			"Repository" : "CRAN"
 		},
+		"vroom" : {
+			"Package" : "vroom",
+			"Version" : "1.5.5",
+			"Source" : "Repository",
+			"Repository" : "CRAN"
+		},
 		"xfun" : {
 			"Package" : "xfun",
-			"Version" : "0.23",
+			"Version" : "0.26",
 			"Source" : "Repository",
 			"Repository" : "CRAN"
 		},
@@ -239,7 +263,7 @@
 		},
 		"dplyr" : {
 			"Package" : "dplyr",
-			"Version" : "1.0.6",
+			"Version" : "1.0.7",
 			"Source" : "Repository",
 			"Repository" : "CRAN"
 		},
@@ -251,19 +275,19 @@
 		},
 		"ParallelLogger" : {
 			"Package" : "ParallelLogger",
-			"Version" : "2.0.1",
+			"Version" : "2.0.2",
 			"Source" : "Repository",
 			"Repository" : "CRAN"
 		},
 		"readr" : {
 			"Package" : "readr",
-			"Version" : "1.4.0",
+			"Version" : "2.0.1",
 			"Source" : "Repository",
 			"Repository" : "CRAN"
 		},
 		"RJSONIO" : {
 			"Package" : "RJSONIO",
-			"Version" : "1.3-1.4",
+			"Version" : "1.3-1.6",
 			"Source" : "Repository",
 			"Repository" : "CRAN"
 		},
@@ -293,7 +317,7 @@
 		},
 		"openssl" : {
 			"Package" : "openssl",
-			"Version" : "1.4.4",
+			"Version" : "1.4.5",
 			"Source" : "Repository",
 			"Repository" : "CRAN"
 		},
@@ -321,15 +345,9 @@
 			"Source" : "Repository",
 			"Repository" : "CRAN"
 		},
-		"lubridate" : {
-			"Package" : "lubridate",
-			"Version" : "1.7.10",
-			"Source" : "Repository",
-			"Repository" : "CRAN"
-		},
 		"colorspace" : {
 			"Package" : "colorspace",
-			"Version" : "2.0-1",
+			"Version" : "2.0-2",
 			"Source" : "Repository",
 			"Repository" : "CRAN"
 		},
@@ -341,7 +359,7 @@
 		},
 		"curl" : {
 			"Package" : "curl",
-			"Version" : "4.3.1",
+			"Version" : "4.3.2",
 			"Source" : "Repository",
 			"Repository" : "CRAN"
 		},
@@ -377,7 +395,7 @@
 		},
 		"zip" : {
 			"Package" : "zip",
-			"Version" : "2.0.4",
+			"Version" : "2.2.0",
 			"Source" : "Repository",
 			"Repository" : "CRAN"
 		},
@@ -393,9 +411,15 @@
 			"Source" : "Repository",
 			"Repository" : "CRAN"
 		},
+		"lubridate" : {
+			"Package" : "lubridate",
+			"Version" : "1.7.10",
+			"Source" : "Repository",
+			"Repository" : "CRAN"
+		},
 		"openxlsx" : {
 			"Package" : "openxlsx",
-			"Version" : "4.2.3",
+			"Version" : "4.2.4",
 			"Source" : "Repository",
 			"Repository" : "CRAN"
 		},
@@ -411,9 +435,15 @@
 			"Source" : "Repository",
 			"Repository" : "CRAN"
 		},
+		"plyr" : {
+			"Package" : "plyr",
+			"Version" : "1.8.6",
+			"Source" : "Repository",
+			"Repository" : "CRAN"
+		},
 		"renv" : {
 			"Package" : "renv",
-			"Version" : "0.13.2",
+			"Version" : "0.14.0",
 			"Source" : "Repository",
 			"Repository" : "CRAN"
 		},
@@ -435,17 +465,7 @@
 			"RemoteHost" : "api.github.com",
 			"RemoteRepo" : "Covid19VaccineAesiIncidenceRate",
 			"RemoteUsername" : "ohdsi-studies",
-			"RemoteRef" : "develop"
-		},
-		"OhdsiSharing" : {
-			"Package" : "OhdsiSharing",
-			"Version" : "0.2.2",
-			"Source" : "GitHub",
-			"RemoteType" : "github",
-			"RemoteHost" : "api.github.com",
-			"RemoteRepo" : "OhdsiSharing",
-			"RemoteUsername" : "ohdsi",
-			"RemoteRef" : "v0.2.2"
+			"RemoteRef" : "master"
 		}
 	}
 }

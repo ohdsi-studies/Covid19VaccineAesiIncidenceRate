@@ -166,6 +166,7 @@ runStudy <- function(connectionDetails = NULL,
       insertRefEntries(connection = connection,
                        sqlFile = "InsertOutcomeRef.sql",
                        cohortDatabaseSchema = cohortDatabaseSchema,
+                       tempEmulationSchema = tempEmulationSchema,
                        tableName = outcomeRefTable,
                        outcome_id = outcomeCohorts$outcomeId[i],
                        outcome_cohort_definition_id = outcomeCohorts$outcomeCohortDefinitionId[i],
@@ -185,6 +186,7 @@ runStudy <- function(connectionDetails = NULL,
       insertRefEntries(connection = connection,
                        sqlFile = "InsertTimeAtRiskRef.sql",
                        cohortDatabaseSchema = cohortDatabaseSchema,
+                       tempEmulationSchema = tempEmulationSchema,
                        tableName = timeAtRiskTable,
                        time_at_risk_id = timeAtRisk$time_at_risk_id[i],
                        time_at_risk_start_offset = timeAtRisk$time_at_risk_start_offset[i],
@@ -220,12 +222,17 @@ runStudy <- function(connectionDetails = NULL,
   op <- getObservationPeriodDateRange(connection,
                                       cdmDatabaseSchema = cdmDatabaseSchema,
                                       tempEmulationSchema = tempEmulationSchema)
+  vocabInfo <- getVocabularyInfo(connection = connection,
+                                 cdmDatabaseSchema = cdmDatabaseSchema,
+                                 tempEmulationSchema = tempEmulationSchema)
+  vocabularyVersion <- "UNKNOWN"
+  if (nrow(vocabInfo) >= 1) {
+    vocabularyVersion <- vocabInfo[[1]]
+  }
   database <- data.frame(databaseId = databaseId,
                          databaseName = databaseName,
                          description = databaseDescription,
-                         vocabularyVersion = getVocabularyInfo(connection = connection,
-                                                               cdmDatabaseSchema = cdmDatabaseSchema,
-                                                               tempEmulationSchema = tempEmulationSchema),
+                         vocabularyVersion = vocabularyVersion,
                          minObsPeriodDate = op$minObsPeriodDate,
                          maxObsPeriodDate = op$maxObsPeriodDate,
                          isMetaAnalysis = 0)
@@ -238,20 +245,20 @@ runStudy <- function(connectionDetails = NULL,
                                 packageVersion = packageVersionNumber,
                                 executionDate = start,
                                 params = RJSONIO::toJSON(list(targetCohortTable = targetCohortTable,
-                                                                                                                                                              targetRefTable = targetRefTable,
-                                                                                                                                                              subgroupCohortTable = subgroupCohortTable,
-                                                                                                                                                              subgroupRefTable = subgroupRefTable,
-                                                                                                                                                              outcomeCohortTable = outcomeCohortTable,
-                                                                                                                                                              outcomeRefTable = outcomeRefTable,
-                                                                                                                                                              timeAtRiskTable = timeAtRiskTable,
-                                                                                                                                                              summaryTable = summaryTable,
-                                                                                                                                                              exportFolder = exportFolder,
-                                                                                                                                                              databaseId = databaseId,
-                                                                                                                                                              databaseName = databaseName,
-                                                                                                                                                              databaseDescription = databaseDescription,
-                                                                                                                                                              minCellCount = minCellCount,
-                                                                                                                                                              incremental = incremental,
-                                                                                                                                                              incrementalFolder = incrementalFolder)))
+                                                              targetRefTable = targetRefTable,
+                                                              subgroupCohortTable = subgroupCohortTable,
+                                                              subgroupRefTable = subgroupRefTable,
+                                                              outcomeCohortTable = outcomeCohortTable,
+                                                              outcomeRefTable = outcomeRefTable,
+                                                              timeAtRiskTable = timeAtRiskTable,
+                                                              summaryTable = summaryTable,
+                                                              exportFolder = exportFolder,
+                                                              databaseId = databaseId,
+                                                              databaseName = databaseName,
+                                                              databaseDescription = databaseDescription,
+                                                              minCellCount = minCellCount,
+                                                              incremental = incremental,
+                                                              incrementalFolder = incrementalFolder)))
   writeToCsv(packageMetadata, file.path(exportFolder, "package.csv"))
 
 
@@ -389,7 +396,7 @@ getVocabularyInfo <- function(connection, cdmDatabaseSchema, tempEmulationSchema
                               targetDialect = attr(connection, "dbms"),
                               tempEmulationSchema = tempEmulationSchema)
   vocabInfo <- DatabaseConnector::querySql(connection, sql)
-  return(vocabInfo[[1]])
+  return(vocabInfo)
 }
 
 getObservationPeriodDateRange <- function(connection, cdmDatabaseSchema, tempEmulationSchema) {

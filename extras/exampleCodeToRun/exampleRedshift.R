@@ -263,11 +263,9 @@ dataSourceInformation <- getDataSourceInformation(connectionDetails = connection
                                                   vocabDatabaseSchema = connectionSpecifications$vocabDatabaseSchema, 
                                                   databaseId = databaseId)
 
-if (all(
-  !is.null(dataSourceDetails),
-  nrow(dataSourceDetails) == 1,
-  nchar(dataSourceDetails$versionId) > 0
-)) {
+if (all(!is.null(dataSourceInformation),
+        nrow(dataSourceInformation) == 1,
+        nchar(dataSourceInformation$versionId) > 0)) {
   databaseId <-
     paste0(
       x$databaseId,

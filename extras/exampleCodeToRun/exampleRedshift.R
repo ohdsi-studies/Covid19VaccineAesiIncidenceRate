@@ -263,10 +263,25 @@ dataSourceInformation <- getDataSourceInformation(connectionDetails = connection
                                                   vocabDatabaseSchema = connectionSpecifications$vocabDatabaseSchema, 
                                                   databaseId = databaseId)
 
-if (all(!is.null(dataSourceInformation),
-        nrow(dataSourceInformation) == 1,
-        nchar(dataSourceInformation$versionId) > 0)) {
-  databaseId <- paste0(databaseId, "_v",dataSourceInformation$versionId, "_", as.character(dataSourceInformation$versionDate))
+if (all(
+  !is.null(dataSourceDetails),
+  nrow(dataSourceDetails) == 1,
+  nchar(dataSourceDetails$versionId) > 0
+)) {
+  databaseId <-
+    paste0(
+      x$databaseId,
+      "_v",
+      dataSourceDetails$versionId,
+      "_",
+      stringr::str_replace_all(
+        string = as.character(dataSourceDetails$versionDate),
+        pattern = stringr::fixed("-"),
+        replacement = ""
+      )
+    )
+} else {
+  databaseId <- x$databaseId
 }
 
 databaseName <- dataSourceInformation$cdmSourceName

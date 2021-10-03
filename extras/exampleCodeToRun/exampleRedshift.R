@@ -268,18 +268,18 @@ if (all(!is.null(dataSourceInformation),
         nchar(dataSourceInformation$versionId) > 0)) {
   databaseId <-
     paste0(
-      x$databaseId,
+      databaseId,
       "_v",
-      dataSourceDetails$versionId,
+      dataSourceInformation$versionId,
       "_",
       stringr::str_replace_all(
-        string = as.character(dataSourceDetails$versionDate),
+        string = as.character(dataSourceInformation$versionDate),
         pattern = stringr::fixed("-"),
         replacement = ""
       )
     )
 } else {
-  databaseId <- x$databaseId
+  databaseId <- databaseId
 }
 
 databaseName <- dataSourceInformation$cdmSourceName
